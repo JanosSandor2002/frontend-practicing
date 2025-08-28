@@ -4,17 +4,11 @@
         sans-serif;
 }
 .green {
-    font-family: 'Times New Roman', Times, serif;
     color: green;
 }
 .blue {
-    font-weight: bold;
     color: blue;
 }
 .red {
-    font-weight: lighter;
     color: red;
-}
-#list {
-    font-size: 24px;
 }
