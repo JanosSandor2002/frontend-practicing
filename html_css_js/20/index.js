@@ -1,57 +1,88 @@
 let level = 1;
 let array1 = [];
 let array2 = [];
+let acceptingInput = false; // true, ha a játékos tud gombot nyomni
+
+const colors = ['red', 'green', 'blue', 'yellow'];
+
+startGame();
 addSound();
-start();
-function start() {
-    document.addEventListener('keypress', function () {
-        document.querySelector('h1').innerHTML = 'level ' + level;
-        play();
+
+function startGame() {
+    document.querySelector('h1').innerText = 'Nyomj egy gombot a kezdéshez';
+    document.addEventListener('keypress', function handler() {
+        document.removeEventListener('keypress', handler);
+        nextLevel();
     });
 }
-function play() {
-    if (array1.length < 1) {
-        console.log('játék hamarosan kezdődik');
-    } else {
-        console.log(array2);
-    }
-}
-function addSound() {
-    let a = document.querySelectorAll('.btn');
-    for (let i = 0; i < a.length; i++) {
-        a[i].addEventListener('click', function () {
-            let audio;
-            switch (a[i].classList[1]) {
-                case 'blue':
-                    array2.add('b');
-                    audio = new Audio('sounds/blue.mp3');
-                    audio.play();
-                    break;
-                case 'green':
-                    array2.add('g');
-                    audio = new Audio('sounds/green.mp3');
-                    audio.play();
-                    break;
-                case 'red':
-                    array2.add('r');
-                    audio = new Audio('sounds/red.mp3');
-                    audio.play();
-                    break;
-                case 'yellow':
-                    array2.add('y');
-                    audio = new Audio('sounds/yellow.mp3');
-                    audio.play();
-                    break;
-            }
-            animate(a[i].classList[1]);
-        });
-        console.log(a[i]);
-    }
-}
-const animate = (key) => {
-    let b = document.querySelector('.' + key).classList;
-    b.add('pressed');
+
+function nextLevel() {
+    array2 = []; // játékos lépéseinek törlése
+    document.querySelector('h1').innerText = 'Level ' + level;
+
+    const nextColor = colors[Math.floor(Math.random() * 4)];
+    array1.push(nextColor);
+
+    acceptingInput = false; // ne lehessen kattintani animáció közben
+
+    // animációk sorban
+    array1.forEach((color, i) => {
+        setTimeout(() => {
+            animate(color);
+            playSound(color);
+        }, i * 600);
+    });
+
+    // engedélyezés a játékosnak a következő szintnél
     setTimeout(() => {
-        b.remove('pressed');
-    }, 100);
-};
+        acceptingInput = true;
+    }, array1.length * 600);
+}
+
+function addSound() {
+    document.querySelectorAll('.btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+            if (!acceptingInput) return; // ha animáció megy, ne lehessen kattintani
+
+            let color = btn.classList[1];
+            array2.push(color);
+
+            playSound(color);
+            animate(color);
+
+            // ellenőrizzük az aktuális lépést
+            let index = array2.length - 1;
+            if (array2[index] !== array1[index]) {
+                gameOver();
+            } else if (array2.length === array1.length) {
+                level++;
+                setTimeout(nextLevel, 1000); // új szint
+            }
+        });
+    });
+}
+
+function animate(color) {
+    const btn = document.querySelector('.' + color);
+    btn.classList.add('pressed');
+    setTimeout(() => btn.classList.remove('pressed'), 200);
+}
+
+function playSound(color) {
+    const audio = new Audio('sounds/' + color + '.mp3');
+    audio.play();
+}
+
+function gameOver() {
+    acceptingInput = false;
+    document.querySelector('h1').innerText =
+        'Vesztettél! Nyomj egy billentyűt a kezdéshez';
+    array1 = [];
+    array2 = [];
+    level = 1;
+
+    document.addEventListener('keypress', function handler() {
+        document.removeEventListener('keypress', handler);
+        nextLevel();
+    });
+}
