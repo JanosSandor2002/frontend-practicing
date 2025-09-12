@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Feladatok</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="item">
+        <h1>Üdvözlő feladat</h1>
+        <button onclick="greet()">Kattints Rám!</button>
+      </div>
+      <div class="item">
+        <h1>Számolós Feladat</h1>
+        <input type="number" id="input1" />
+        <input type="number" id="input2" />
+        <button onclick="calculate()">Kattints Rám!</button>
+        <p>Eredmény: <span id="sum"></span></p>
+      </div>
+      <div class="item">
+        <h1>Random Szín háttérváltó</h1>
+        <button onclick="changeColor()">Click for color change</button>
+      </div>
+      <div class="item">
+        <h1>Szöveg megfordító</h1>
+        <input type="text" id="input3" />
+        <button onclick="switchText()">Szöveg Megfordító</button>
+        <p>Megfordított szöveg: <span id="text1"></span></p>
+      </div>
+      <div class="item">
+        <h1>Számláló Resettel</h1>
+        <button onclick="addOne('add')">Add</button>
+        <button onclick="addOne('reset')">Reset</button>
+        <p>Számláló: <span id="text2">0</span></p>
+      </div>
+      <div class="item">
+        <h1>Lista bővítése dinamikusan</h1>
+        <input type="text" id="input4" />
+        <button onclick="listAppend()">Listához Adás</button>
+        <p id="warning"></p>
+        <ul id="list"></ul>
+      </div>
+      <div class="item">
+        <h1>Véletlenszám Generátor min és max-al</h1>
+        <input type="text" id="input5" value="Max" />
+        <input type="text" id="input6" value="Min" />
+        <button onclick="generate()">Generálás</button>
+        <p>A számod: <span id="lucky"></span></p>
+      </div>
+      <div class="item">
+        <h1>Egyszerű óra</h1>
+        <p id="time"></p>
+      </div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
