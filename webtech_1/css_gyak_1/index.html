@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stílus példa</title>
+    <style>
+      html {
+        background-color: lightblue;
+        font-size: 25px;
+      }
+
+      p {
+        color: lightgray;
+        text-align: center;
+      }
+
+      .blueClass {
+        color: blue;
+      }
+
+      #important {
+        font-size: 50px;
+      }
+
+      .borderClass {
+        border: 15px dotted black;
+        padding: 10px;
+        margin: 10px;
+        border-radius: 5px;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      table td,
+      table th {
+        border: 1px solid black;
+        padding: 5px;
+        margin: 5px;
+      }
+
+      table tr:nth-child(even) {
+        background-color: #e0e0e0;
+      }
+
+      table tr:hover {
+        background-color: #a0c4ff;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="blueClass">Ez egy kék szövegű bekezdés a blueClass osztályból.</p>
+    <div id="important">Ez az important azonosítójú div.</div>
+    <div class="borderClass">Ez egy borderClass-os div.</div>
+    <div class="blueClass">Ez egy másik blueClass-os div.</div>
+
+    <table>
+      <tr>
+        <th>Oszlop 1</th>
+        <th>Oszlop 2</th>
+        <th>Oszlop 3</th>
+      </tr>
+      <tr>
+        <td>1,1</td>
+        <td>1,2</td>
+        <td>1,3</td>
+      </tr>
+      <tr>
+        <td>2,1</td>
+        <td>2,2</td>
+        <td>2,3</td>
+      </tr>
+      <tr>
+        <td>3,1</td>
+        <td>3,2</td>
+        <td>3,3</td>
+      </tr>
+      <tr>
+        <td>4,1</td>
+        <td>4,2</td>
+        <td>4,3</td>
+      </tr>
+    </table>
+  </body>
+</html>
