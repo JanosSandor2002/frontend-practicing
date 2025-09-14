@@ -7,12 +7,23 @@ import Book from './Book.js';
 
 const BookList = () => {
   return (
-    <section className='booklist'>
-      {books.map((book) => {
-        const { img, title, author, id } = book;
-        return <Book img={img} author={author} title={title} key={id}></Book>;
-      })}
-    </section>
+    <>
+      <h1>Amazon Best Sellers</h1>
+      <section className='booklist'>
+        {books.map((book, index) => {
+          const { img, title, author, id } = book;
+          return (
+            <Book
+              img={img}
+              author={author}
+              title={title}
+              key={id}
+              number={index}
+            ></Book>
+          );
+        })}
+      </section>
+    </>
   );
 };
 
