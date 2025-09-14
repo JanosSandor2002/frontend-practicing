@@ -1,12 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Feladat</title>
-    <style></style>
+    <title>Munkavállaló űrlap</title>
+    <style>
+      .error {
+        border: 2px solid red;
+      }
+      #hibak {
+        color: red;
+        margin-top: 1rem;
+      }
+    </style>
   </head>
   <body>
+    <h1>Munkavállalói adatok</h1>
+
+    <form id="munkavallaloForm">
+      <label for="nev">Név:</label><br />
+      <input type="text" id="nev" name="nev" required /><br /><br />
+
+      <label for="eletkor">Életkor:</label><br />
+      <input type="number" id="eletkor" name="eletkor" required /><br /><br />
+
+      <label for="munkahely">Munkahely:</label><br />
+      <input type="text" id="munkahely" name="munkahely" required /><br /><br />
+
+      <label for="fizetes">Fizetés (eFt):</label><br />
+      <input type="number" id="fizetes" name="fizetes" required /><br /><br />
+
+      <label for="leiras">Munkaköri leírás:</label><br />
+      <textarea id="leiras" name="leiras" rows="5" cols="40" required></textarea
+      ><br /><br />
+
+      <label for="vegzettseg">Legmagasabb iskolai végzettség:</label><br />
+      <select id="vegzettseg" name="vegzettseg" required>
+        <option value="">-- Válassz --</option>
+        <option value="altalanos">Általános iskola</option>
+        <option value="erettsegi">Érettségi</option>
+        <option value="foiskola">Főiskola (BSc)</option>
+        <option value="egyetem">Egyetem (MSc)</option></select
+      ><br /><br />
+
+      <label>Nem:</label><br />
+      <input type="checkbox" id="ferfi" name="nem" value="ferfi" /> Férfi
+      <input type="checkbox" id="no" name="nem" value="no" /> Nő<br /><br />
+
+      <button type="submit">Mentés</button>
+    </form>
+
+    <div id="hibak"></div>
+
     <script src="script.js"></script>
   </body>
 </html>
