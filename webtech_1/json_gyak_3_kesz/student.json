@@ -1,0 +1,7 @@
+{
+  "name": "Janos",
+  "age": 23,
+  "university": "University of Miskolc",
+  "subjects": ["Math", "Programming", "Web Technologies"],
+  "isVegzos": true
+}
