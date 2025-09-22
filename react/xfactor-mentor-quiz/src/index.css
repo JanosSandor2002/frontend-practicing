@@ -179,14 +179,17 @@ body {
 @media (max-width: 600px) {
   /* Navbar */
   .navbar {
+    font-size: 0.5rem;
     height: 100px;
+    padding: 10px;
   }
 
   .navbaritems {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
-    padding: 10px;
+    justify-content: space-between;
+    gap: 15px;
+    height: 100px;
   }
 
   .navbar img {
@@ -195,8 +198,8 @@ body {
   }
 
   #navbar-logo {
-    height: 150px;
-    width: 150px;
+    height: 100px;
+    width: 100px;
     margin-top: 0;
   }
 
@@ -208,12 +211,12 @@ body {
   }
 
   .details h1 {
-    font-size: 1.5rem;
+    font-size: 1rem;
     padding-top: 30px;
   }
 
   .details h3 {
-    font-size: 1rem;
+    font-size: 0.6rem;
   }
 
   /* Quiz szekció */
