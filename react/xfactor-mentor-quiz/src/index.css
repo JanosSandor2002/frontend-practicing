@@ -175,3 +175,95 @@ body {
   width: 50px;
   object-fit: contain;
 }
+/* Mobil stílusok 600px alatt */
+@media (max-width: 600px) {
+  /* Navbar */
+  .navbar {
+    height: 100px;
+  }
+
+  .navbaritems {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+  }
+
+  .navbar img {
+    height: 60px;
+    width: 60px;
+  }
+
+  #navbar-logo {
+    height: 150px;
+    width: 150px;
+    margin-top: 0;
+  }
+
+  /* Details szekció */
+  .details {
+    height: 400px;
+    background-size: cover;
+    padding: 20px;
+  }
+
+  .details h1 {
+    font-size: 1.5rem;
+    padding-top: 30px;
+  }
+
+  .details h3 {
+    font-size: 1rem;
+  }
+
+  /* Quiz szekció */
+  .quiz {
+    background-size: cover;
+    padding: 10px;
+  }
+
+  #submitbutton {
+    font-size: 2rem;
+    height: 60px;
+    width: 200px;
+  }
+
+  .container img {
+    height: 200px;
+    width: 200px;
+  }
+
+  .imgtext {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .checkboxes {
+    font-size: 1rem;
+    gap: 10px;
+  }
+
+  .label {
+    width: 200px;
+    height: 40px;
+    font-size: 0.9rem;
+  }
+
+  /* Footer */
+  .footer {
+    flex-direction: column;
+    height: auto;
+    gap: 15px;
+    padding: 10px;
+  }
+
+  .navicons {
+    width: 200px;
+    height: 60px;
+  }
+
+  .navicons a img {
+    height: 40px;
+    width: 40px;
+  }
+}
