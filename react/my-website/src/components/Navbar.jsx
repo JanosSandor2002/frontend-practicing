@@ -1,15 +1,17 @@
 import React from 'react';
 import navlogo from '../images/logo.png';
+import selfPic from '../images/self.jpg';
+import '../styles/Navbar.css'
 import Navicons from './Navicons';
 const Navbar = () => {
   return (
     <div className='navbar'>
-      <img src='' alt='mypic' />
+      <img src={selfPic} alt='mypic' />
       <div className='navbaritems'>
-        <a href=''>Főoldal</a>
-        <a href=''>Rólam</a>
-        <a href=''>Képzettség</a>
-        <a href=''>Kapcsolat</a>
+        <a href=''>MainMenu</a>
+        <a href=''>About Me</a>
+        <a href=''>Qualifications</a>
+        <a href=''>Contact</a>
       </div>
       <Navicons />
     </div>
