@@ -1,7 +1,7 @@
 import React from 'react';
 import navlogo from '../images/logo.png';
-import selfPic from '../images/self.jpg';
-import '../styles/Navbar.css'
+import selfPic from '../images/self.jpeg';
+import '../styles/Navbar.css';
 import Navicons from './Navicons';
 const Navbar = () => {
   return (
