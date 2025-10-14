@@ -1,5 +1,7 @@
 # 1️⃣ Új projekt mappa létrehozása
+
 mkdir my-ts-project
+
 cd my-ts-project
 
 # 2️⃣ NPM inicializálása
