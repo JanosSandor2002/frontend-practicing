@@ -5,12 +5,20 @@
   --secondary-color: #a8dadc;
   --third-color: #ffb3b3;
   --danger-color: #e74c3c;
+  --border-width: 5px;
   --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   --base-font-size: 16px;
   --line-height: 1.6;
   --spacing-unit: 1rem;
   --border-radius: 20px;
+}
+.light-theme {
+  --background-color: #ffffff;
+  --primary-color: #000000;
+  --secondary-color: #005f8e;
+  --third-color: #2e8b57;
+  --danger-color: #e74c3c;
 }
 /* 1. Reset */
 * {
@@ -49,18 +57,18 @@ p {
 }
 /* 3. Layout */
 nav {
-  background-color: black;
+  background-color: var(--background-color);
   height: 200px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 5px solid var(--third-color);
+  border-bottom: var(--border-width) solid var(--third-color);
   z-index: 1;
   transition: border-color 1s ease;
 }
 nav:hover {
-  border-bottom: 5px solid var(--secondary-color);
+  border-bottom: var(--border-width) solid var(--secondary-color);
 }
 main {
   flex: 1;
@@ -71,8 +79,8 @@ main {
   z-index: 1;
 }
 footer {
-  background-color: black;
-  border-top: var(--third-color) solid 5px;
+  background-color: var(--background-color);
+  border-top: var(--third-color) solid var(--border-width);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -113,7 +121,7 @@ nav div a:hover {
   height: 150px;
   width: 200px;
   border-radius: 50%;
-  border: black 2px solid;
+  border: var(--background-color) 2px solid;
   transition: border-color 1s ease;
 }
 .hero:hover,
@@ -126,7 +134,7 @@ nav div a:hover {
   height: 75px;
   width: 300px;
   color: var(--third-color);
-  background-color: black;
+  background-color: var(--background-color);
   border: 5px solid var(--third-color);
   cursor: pointer;
   transition: color 1s ease, border-color 1s ease;
@@ -139,7 +147,7 @@ nav div a:hover {
 }
 .card {
   border-radius: var(--border-radius);
-  border: var(--third-color) solid 5px;
+  border: var(--third-color) solid var(--border-width);
   width: 75%;
   min-height: 600px;
   height: auto;
@@ -150,11 +158,11 @@ nav div a:hover {
   margin: 50px auto;
   transition: border-color 1s ease;
   position: relative;
-  background-color: black;
+  background-color: var(--background-color);
   z-index: 1;
 }
 .card:hover {
-  border: var(--secondary-color) solid 5px;
+  border: var(--secondary-color) solid var(--border-width);
 }
 .card h1 {
   transition: color 1s ease;
@@ -162,7 +170,7 @@ nav div a:hover {
 .card:hover h1 {
   color: var(--secondary-color);
 }
-.wallpaper1 {
+#wallpaper1 {
   border-radius: 30px;
   height: 600px;
   width: 300px;
@@ -170,7 +178,7 @@ nav div a:hover {
   top: 40%;
   z-index: 0;
 }
-.wallpaper2 {
+#wallpaper2 {
   border-radius: 30px;
   height: 900px;
   width: 300px;
@@ -184,9 +192,7 @@ nav div a:hover {
   height: 70px;
   width: 70px;
 }
-.icon:hover {
-  filter: brightness(0) invert(1) sepia(1) saturate(3) hue-rotate(140deg);
-}
+
 .input-text {
   z-index: 2;
   height: 75px;
@@ -284,12 +290,12 @@ nav div a:hover {
 }
 /* 6. Media queries */
 @media (min-width: 768px) and (max-width: 1023px) {
-  .wallpaper1 {
+  #wallpaper1 {
     top: 54%;
     width: 150px;
     height: 400px;
   }
-  .wallpaper2 {
+  #wallpaper2 {
     width: 200px;
     height: 700px;
   }
@@ -312,6 +318,111 @@ nav div a:hover {
   }
 }
 @media (min-width: 576px) and (max-width: 767px) {
+  :root {
+    --base-font-size: 12px;
+    --border-width: 3px;
+  }
+  #wallpaper1 {
+    top: 40%;
+    width: 120px;
+    height: 300px;
+  }
+  #wallpaper2 {
+    width: 120px;
+    height: 500px;
+  }
+  nav div a {
+    font-size: 1.5rem !important;
+    margin: auto 10px;
+  }
+  .hero {
+    height: 140px;
+    width: 140px;
+    margin-left: 1rem !important;
+  }
+  .hero2 {
+    height: 140px;
+    width: 140px;
+    margin-left: 1rem !important;
+  }
+  nav {
+    height: 150px;
+  }
+  nav div {
+    height: auto;
+    display: grid;
+    grid-template-columns: 100px 100px;
+    grid-template-rows: 50px 50px;
+    gap: 0;
+  }
+  .card {
+    min-height: 500px;
+    padding: 15px;
+    margin: 25px auto;
+  }
+  footer div a {
+    margin: 5px 10px;
+  }
+  .icon {
+    height: 50px;
+    width: 50px;
+  }
 }
-@media (min-width: 320px) and (max-width: 576px) {
+@media (min-width: 320px) and (max-width: 575px) {
+  :root {
+    --base-font-size: 10px;
+    --border-width: 2px;
+  }
+  #wallpaper1 {
+    top: 40%;
+    width: 120px;
+    height: 300px;
+  }
+  #wallpaper2 {
+    width: 120px;
+    height: 500px;
+  }
+  nav div a {
+    font-size: 1rem !important;
+    margin: auto 10px;
+  }
+  .card {
+    min-height: 100px;
+    height: auto;
+  }
+  .hero {
+    height: 90px;
+    width: 90px;
+    margin-left: 0.1rem !important;
+  }
+  .hero2 {
+    height: 90px;
+    width: 90px;
+    margin-left: 0.1rem !important;
+  }
+  nav {
+    height: 120px;
+  }
+  nav div {
+    height: auto;
+    display: grid;
+    grid-template-columns: 60px 60px;
+    grid-template-rows: 30px 30px;
+    gap: 0;
+  }
+  nav div a {
+    margin: 2px 2px;
+  }
+  .card {
+    min-height: 500px;
+    padding: 15px;
+    margin: 25px auto;
+  }
+  footer div a {
+    margin: 5px 10px;
+  }
+  .icon {
+    height: 35px;
+    width: 35px;
+  }
 }
