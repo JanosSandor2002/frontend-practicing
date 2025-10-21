@@ -34,7 +34,81 @@
         </a>
       </nav>
     </header>
-    <main></main>
+    <main>
+      <div class="card">
+        <h2>Feedback Form — All Input Types</h2>
+        <form id="complex-form" style="display: flex; flex-direction: column">
+          <label for="name">Name:</label>
+          <input
+            type="text"
+            id="name"
+            class="input-text"
+            placeholder="Enter your name"
+            required
+            style="width: 600px"
+          />
+          <span class="error" id="error-name"></span>
+
+          <label for="message">Your Message:</label>
+          <textarea
+            id="message"
+            class="input-text"
+            rows="4"
+            placeholder="Write your message..."
+            style="width: 600px"
+          ></textarea>
+          <span class="error" id="error-message"></span>
+
+          <label for="topic">Topic:</label>
+          <input
+            list="topics"
+            id="topic"
+            name="topic"
+            placeholder="Choose a topic"
+            style="width: 600px"
+          />
+          <datalist id="topics">
+            <option value="Website Feedback"></option>
+            <option value="Bug Report"></option>
+            <option value="Feature Request"></option>
+            <option value="Other"></option>
+          </datalist>
+          <span class="error" id="error-topic"></span>
+
+          <label>
+            <input type="checkbox" id="subscribe" />
+            Subscribe to newsletter
+          </label>
+
+          <p>How satisfied are you?</p>
+          <label
+            ><input type="radio" name="satisfaction" value="1" /> 😞 Poor</label
+          >
+          <label
+            ><input type="radio" name="satisfaction" value="2" /> 😐 Okay</label
+          >
+          <label
+            ><input type="radio" name="satisfaction" value="3" /> 😊
+            Great</label
+          >
+          <span class="error" id="error-satisfaction"></span>
+
+          <label for="favcolor">Favorite Color:</label>
+          <input type="color" id="favcolor" name="favcolor" value="#ff0000" />
+
+          <label for="date">Preferred Contact Date:</label>
+          <input type="date" id="date" name="date" />
+          <span class="error" id="error-date"></span>
+
+          <div class="buttons">
+            <button type="submit" class="button">Submit</button>
+            <button type="reset" class="button">Reset</button>
+          </div>
+        </form>
+
+        <h3 id="form-status" class="mrg-t-2"></h3>
+      </div>
+    </main>
     <footer>
       <h1 class="fnt-s-2 mrg-t-1 mrg-b-1">Contact</h1>
       <div class="mrg-t-1 mrg-b-3">

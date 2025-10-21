@@ -332,6 +332,25 @@ table td {
   color: var(--primary-color);
   z-index: 10;
 }
+/*---------------------------- feedback html ----------------------------*/
+.input-error {
+  border: 2px solid red !important;
+  background-color: #ffeaea;
+}
+.input-valid {
+  border: 2px solid green !important;
+  background-color: #eaffea;
+}
+.error {
+  color: red;
+  font-size: 0.9em;
+  margin-bottom: 8px;
+}
+#form-status {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 15px;
+}
 /*----------------------------------------------------- 5. Utilities -----------------------------------------------------*/
 /*---------------------------- flex ----------------------------*/
 .flex-clm {
