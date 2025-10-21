@@ -234,6 +234,10 @@ table td {
   right: 0;
   z-index: 0;
 }
+#gallery-pic {
+  height: 500px;
+  width: 600px;
+}
 /*---------------------------- card ----------------------------*/
 .card {
   border-radius: var(--border-radius);
