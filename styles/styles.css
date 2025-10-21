@@ -125,7 +125,10 @@ section:hover h2 {
 }
 /*---------------------------- aside ----------------------------*/
 aside {
-  border: 3px solid yellow;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
   width: 20%;
   height: 600px;
   margin: 5px 10px;
@@ -183,6 +186,9 @@ table {
 }
 table td {
   background-color: red;
+  font-size: 48px;
+  font-weight: bold;
+  text-transform: capitalize;
 }
 /*----------------------------------------------------- 4. Components -----------------------------------------------------*/
 /*---------------------------- picture ----------------------------*/
@@ -235,8 +241,9 @@ table td {
   z-index: 0;
 }
 #gallery-pic {
-  height: 500px;
-  width: 600px;
+  border-radius: var(--border-radius);
+  height: 600px;
+  width: 100%;
 }
 /*---------------------------- card ----------------------------*/
 .card {
@@ -274,7 +281,7 @@ table td {
   width: 300px;
   color: var(--third-color);
   background-color: var(--background-color);
-  border: 5px solid var(--third-color);
+  border: var(--border-width) solid var(--third-color);
   cursor: pointer;
   transition: color 1s ease, border-color 1s ease;
   margin: 20px auto;
@@ -282,7 +289,7 @@ table td {
 }
 .button:hover {
   color: var(--secondary-color);
-  border: 5px solid var(--secondary-color);
+  border: var(--border-width) solid var(--secondary-color);
 }
 /*---------------------------- span ----------------------------*/
 .span {
@@ -297,7 +304,7 @@ table td {
 .input-text {
   z-index: 2;
   height: 75px;
-  width: 300px;
+  width: 200px;
   margin: auto auto;
   border-radius: var(--border-radius);
   text-align: center;
@@ -350,6 +357,32 @@ table td {
   text-align: center;
   font-weight: bold;
   margin-top: 15px;
+}
+#feedback-name {
+  width: 500px;
+  height: 50px;
+  font-size: 32px;
+}
+#message {
+  width: 500px;
+  height: 200px;
+}
+#topic {
+  width: 500px;
+  height: 50px;
+  font-size: 32px;
+}
+#subscribe-label {
+  font-size: 24px;
+}
+#satisfaction-label {
+  font-size: 32px;
+}
+#color-label {
+  font-size: 32px;
+}
+#date-label {
+  font-size: 32px;
 }
 /*----------------------------------------------------- 5. Utilities -----------------------------------------------------*/
 /*---------------------------- flex ----------------------------*/
@@ -430,6 +463,10 @@ table td {
 /*----------------------------------------------------- 6. Media queries -----------------------------------------------------*/
 /*---------------------------- laptop/ ----------------------------*/
 @media (min-width: 768px) and (max-width: 1023px) {
+  :root {
+    --base-font-size: 14px;
+    --border-width: 3px;
+  }
   #wallpaper1 {
     top: 54%;
     width: 150px;
@@ -453,8 +490,33 @@ table td {
     width: 100px;
     margin-left: 1rem !important;
   }
+  .card {
+    min-height: 400px;
+  }
   nav {
     height: 150px;
+  }
+  section {
+    height: 800px;
+  }
+  aside {
+    height: 800px;
+  }
+  .button {
+    width: 200px;
+    margin-bottom: 30px;
+  }
+  .input-text {
+    width: 150px;
+  }
+  form {
+    width: 600px;
+  }
+  #gallery-pic {
+    height: 400px;
+  }
+  table td {
+    font-size: 40px;
   }
 }
 /*---------------------------- tablet ----------------------------*/
@@ -479,7 +541,6 @@ table td {
   .hero {
     height: 140px;
     width: 140px;
-    margin-left: 1rem !important;
   }
   .hero2 {
     height: 80px;
@@ -505,7 +566,7 @@ table td {
     margin: 0 0;
   }
   .card {
-    min-height: 500px;
+    min-height: 300px;
     padding: 15px;
     margin: 25px auto;
   }
@@ -515,6 +576,44 @@ table td {
   .icon {
     height: 50px;
     width: 50px;
+  }
+  section {
+    height: 650px;
+  }
+  aside {
+    height: 650px;
+  }
+  .input-text {
+    width: 150px;
+  }
+  form {
+    width: 450px;
+  }
+  #gallery-pic {
+    height: 300px;
+  }
+  .helper {
+    height: 400px;
+    width: 400px;
+  }
+  .helper h1 {
+    font-size: 16px;
+  }
+  table td {
+    font-size: 30px;
+  }
+  #feedback-name {
+    width: 400px;
+  }
+  #message {
+    width: 400px;
+  }
+  #topic {
+    width: 400px;
+  }
+  .buttons {
+    display: flex;
+    flex-direction: column;
   }
 }
 /*---------------------------- mobile ----------------------------*/
@@ -539,18 +638,18 @@ table td {
   .hero {
     height: 70px;
     width: 70px;
-    margin: 0 auto !important;
+    margin: 0 10px !important;
   }
   .hero2 {
     height: 50px;
     width: 50px;
-    margin: 0 auto !important;
+    margin-right: 20px !important;
   }
   nav {
-    height: auto;
+    height: 110px;
+    justify-content: space-between;
   }
   nav div {
-    border: #005f8e 3px solid;
     margin-top: 10px;
     height: auto;
     display: grid;
@@ -569,9 +668,10 @@ table td {
     margin: 0 0;
   }
   .card {
-    min-height: 500px;
+    min-height: 200px;
     padding: 15px;
-    margin: 25px auto;
+    margin: 5px auto;
+    flex-direction: column;
   }
   footer div a {
     margin: 5px 10px;
@@ -579,5 +679,73 @@ table td {
   .icon {
     height: 35px;
     width: 35px;
+  }
+  aside {
+    display: grid;
+    grid-template-columns: 50px 50px 50px;
+    grid-template-rows: auto auto;
+    height: 200px;
+    width: 200px;
+  }
+  aside img:nth-child(4) {
+    margin-left: 30px;
+  }
+  aside img:nth-child(5) {
+    margin-left: 30px;
+  }
+  .comfortpic {
+    height: 50px;
+    width: 50px;
+  }
+  .button {
+    width: 200px;
+  }
+  .input-text {
+    width: 150px;
+  }
+  form {
+    flex-direction: column;
+    width: 450px;
+  }
+  #gallery-pic {
+    height: 200px;
+  }
+  .helper {
+    height: 300px;
+    width: 300px;
+  }
+  .helper h1 {
+    font-size: 14px;
+  }
+  table td {
+    font-size: 24px;
+  }
+  #feedback-name {
+    font-size: 16px;
+    width: 200px;
+  }
+  #message {
+    font-size: 16px;
+    width: 200px;
+  }
+  #topic {
+    font-size: 16px;
+    width: 200px;
+  }
+  #subscribe-label {
+    font-size: 12px;
+  }
+  #satisfaction-label {
+    font-size: 16px;
+  }
+  #color-label {
+    font-size: 16px;
+  }
+  #date-label {
+    font-size: 16px;
+  }
+  .buttons {
+    display: flex;
+    flex-direction: column;
   }
 }

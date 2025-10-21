@@ -36,36 +36,33 @@
     </header>
     <main>
       <div class="card">
-        <h2>Feedback Form — All Input Types</h2>
+        <h2>Feedback Form</h2>
         <form id="complex-form" style="display: flex; flex-direction: column">
-          <label for="name">Name:</label>
+          <label for="name" style="font-size: 32px">Name:</label>
           <input
             type="text"
-            id="name"
+            id="feedback-name"
             class="input-text"
             placeholder="Enter your name"
             required
-            style="width: 600px"
           />
           <span class="error" id="error-name"></span>
 
-          <label for="message">Your Message:</label>
+          <label for="message" style="font-size: 32px">Your Message:</label>
           <textarea
             id="message"
             class="input-text"
             rows="4"
             placeholder="Write your message..."
-            style="width: 600px"
           ></textarea>
           <span class="error" id="error-message"></span>
 
-          <label for="topic">Topic:</label>
+          <label for="topic" style="font-size: 32px">Topic:</label>
           <input
             list="topics"
             id="topic"
             name="topic"
             placeholder="Choose a topic"
-            style="width: 600px"
           />
           <datalist id="topics">
             <option value="Website Feedback"></option>
@@ -75,12 +72,12 @@
           </datalist>
           <span class="error" id="error-topic"></span>
 
-          <label>
+          <label id="subscribe-label">
             <input type="checkbox" id="subscribe" />
             Subscribe to newsletter
           </label>
 
-          <p>How satisfied are you?</p>
+          <p id="satisfaction-label">How satisfied are you?</p>
           <label
             ><input type="radio" name="satisfaction" value="1" /> 😞 Poor</label
           >
@@ -93,11 +90,16 @@
           >
           <span class="error" id="error-satisfaction"></span>
 
-          <label for="favcolor">Favorite Color:</label>
-          <input type="color" id="favcolor" name="favcolor" value="#ff0000" />
+          <label for="favcolor" id="color-label">Favorite Color:</label>
+          <input type="color" id="favcolor" name="favcolor" value="#ff2323" />
 
-          <label for="date">Preferred Contact Date:</label>
-          <input type="date" id="date" name="date" />
+          <label for="date" id="date-label">Preferred Contact Date:</label>
+          <input
+            type="date"
+            id="date"
+            name="date"
+            style="width: 250px; height: 50px; font-size: 24px"
+          />
           <span class="error" id="error-date"></span>
 
           <div class="buttons">
