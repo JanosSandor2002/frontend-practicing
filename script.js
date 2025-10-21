@@ -1,4 +1,5 @@
 let theme = localStorage.getItem('theme') || 'dark';
+
 if (theme === 'light') {
   $(':root').addClass('light-theme');
   $('.icon').css('filter', 'invert(0)');
@@ -13,6 +14,7 @@ if (theme === 'light') {
   $('.hero2').css('filter', 'invert(1)');
   $('#wallpaper1,#wallpaper2').css('display', 'block');
 }
+
 $('#hero-image-1').click(() => {
   console.log('Theme toggle started');
   if (theme === 'dark') {
@@ -31,11 +33,11 @@ $('#hero-image-1').click(() => {
     $('.hero2').css('filter', 'invert(1)');
     $('#wallpaper1,#wallpaper2').css('display', 'block');
   }
-
   console.log('Theme changed to: ' + theme);
   localStorage.setItem('theme', theme);
   console.log('theme saved in localstorage');
 });
+
 $('.icon').hover(
   function () {
     if (theme === 'dark') {
@@ -52,6 +54,25 @@ $('.icon').hover(
       $(this).css('filter', 'invert(1)');
     } else {
       $(this).css('filter', 'none');
+    }
+  }
+);
+
+$('.comfortpic').hover(
+  function () {
+    let num = this.id.replace('comfortpic', '');
+    $(
+      'section.j-s-r > h1, section.j-s-r > p, section.j-s-r > span, section.j-s-r > ol'
+    ).hide();
+    $('#comfort' + num).show();
+  },
+  function () {
+    let num = this.id.replace('comfortpic', '');
+    $(
+      'section.j-s-r > h1, section.j-s-r > p, section.j-s-r > span, section.j-s-r > ol'
+    ).show();
+    for (let i = 1; i <= 5; i++) {
+      $('#comfort' + i).hide();
     }
   }
 );

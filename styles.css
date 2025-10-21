@@ -1,4 +1,4 @@
-/* 0. Global variables */
+/*----------------------------------------------------- 0. Global variables -----------------------------------------------------*/
 :root {
   --background-color: black;
   --primary-color: #ffffff;
@@ -20,7 +20,7 @@
   --third-color: #2e8b57;
   --danger-color: #e74c3c;
 }
-/* 1. Reset */
+/*----------------------------------------------------- 1. Reset -----------------------------------------------------*/
 * {
   margin: 0;
   padding: 0;
@@ -37,7 +37,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
 }
-/* 2. Global elements */
+/*----------------------------------------------------- 2. Global elements -----------------------------------------------------*/
 a {
   font-weight: bold;
   text-decoration-line: none;
@@ -55,7 +55,12 @@ h6 {
 p {
   color: var(--primary-color);
 }
-/* 3. Layout */
+/*----------------------------------------------------- 3. Layout -----------------------------------------------------*/
+/*---------------------------- header ----------------------------*/
+header {
+  z-index: 1;
+}
+/*---------------------------- nav ----------------------------*/
 nav {
   background-color: var(--background-color);
   height: 200px;
@@ -70,6 +75,17 @@ nav {
 nav:hover {
   border-bottom: var(--border-width) solid var(--secondary-color);
 }
+nav div a {
+  margin: 0 3px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  transition: color 1s ease;
+}
+nav div a:hover {
+  color: var(--secondary-color);
+}
+/*---------------------------- main ----------------------------*/
 main {
   flex: 1;
   display: flex;
@@ -78,6 +94,57 @@ main {
   align-items: center;
   z-index: 1;
 }
+/*---------------------------- section ----------------------------*/
+section {
+  border: 3px solid yellow;
+  border-radius: var(--border-radius);
+  border: var(--third-color) solid var(--border-width);
+  width: 105%;
+  min-height: 600px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin: 50px auto;
+  transition: border-color 1s ease;
+  position: relative;
+  background-color: var(--background-color);
+  z-index: 1;
+}
+section:hover {
+  border: var(--secondary-color) solid var(--border-width);
+}
+section h1,
+section h2 {
+  transition: color 1s ease;
+}
+section:hover h1,
+section:hover h2 {
+  color: var(--secondary-color);
+}
+/*---------------------------- aside ----------------------------*/
+aside {
+  border: 3px solid yellow;
+  width: 20%;
+  height: 600px;
+  margin: 5px 10px;
+  border-radius: var(--border-radius);
+  border: var(--third-color) solid var(--border-width);
+  transition: border-color 1s ease;
+}
+aside:hover {
+  border: var(--secondary-color) solid var(--border-width);
+}
+aside h1,
+aside h2 {
+  transition: color 1s ease;
+}
+aside:hover h1,
+aside:hover h2 {
+  color: var(--secondary-color);
+}
+/*---------------------------- footer ----------------------------*/
 footer {
   background-color: var(--background-color);
   border-top: var(--third-color) solid var(--border-width);
@@ -97,6 +164,7 @@ footer h1 {
 footer:hover h1 {
   color: var(--secondary-color);
 }
+/*---------------------------- form ----------------------------*/
 form {
   display: flex;
   flex-direction: row;
@@ -106,17 +174,8 @@ form {
   z-index: 1;
   width: 800px;
 }
-/* 4. Components */
-nav div a {
-  margin: 0 3px;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  transition: color 1s ease;
-}
-nav div a:hover {
-  color: var(--secondary-color);
-}
+/*----------------------------------------------------- 4. Components -----------------------------------------------------*/
+/*---------------------------- picture ----------------------------*/
 .hero {
   height: 150px;
   width: 200px;
@@ -132,30 +191,40 @@ nav div a:hover {
   border: var(--background-color) 2px solid;
   transition: border-color 1s ease;
 }
-.user {
-  display: none;
-}
 .hero:hover,
 .hero2:hover {
   border-color: var(--secondary-color);
 }
-.button {
-  border-radius: var(--border-radius);
-  font-size: 2rem;
-  height: 75px;
+.user {
+  display: none;
+}
+.icon {
+  filter: invert(1);
+  height: 70px;
+  width: 70px;
+}
+.comfortpic {
+  height: 100px;
+  width: 100px;
+}
+#wallpaper1 {
+  border-radius: 30px;
+  height: 600px;
   width: 300px;
-  color: var(--third-color);
-  background-color: var(--background-color);
-  border: 5px solid var(--third-color);
-  cursor: pointer;
-  transition: color 1s ease, border-color 1s ease;
-  margin: 20px auto;
-  z-index: 1;
+  position: fixed;
+  top: 40%;
+  z-index: 0;
 }
-.button:hover {
-  color: var(--secondary-color);
-  border: 5px solid var(--secondary-color);
+#wallpaper2 {
+  border-radius: 30px;
+  height: 900px;
+  width: 300px;
+  position: fixed;
+  top: 15%;
+  right: 0;
+  z-index: 0;
 }
+/*---------------------------- card ----------------------------*/
 .card {
   border-radius: var(--border-radius);
   border: var(--third-color) solid var(--border-width);
@@ -175,39 +244,42 @@ nav div a:hover {
 .card:hover {
   border: var(--secondary-color) solid var(--border-width);
 }
-.card h1 {
+.card h1,
+.card h2 {
   transition: color 1s ease;
 }
-.card:hover h1 {
+.card:hover h1,
+.card:hover h2 {
   color: var(--secondary-color);
 }
+/*---------------------------- button ----------------------------*/
+.button {
+  border-radius: var(--border-radius);
+  font-size: 2rem;
+  height: 75px;
+  width: 300px;
+  color: var(--third-color);
+  background-color: var(--background-color);
+  border: 5px solid var(--third-color);
+  cursor: pointer;
+  transition: color 1s ease, border-color 1s ease;
+  margin: 20px auto;
+  z-index: 1;
+}
+.button:hover {
+  color: var(--secondary-color);
+  border: 5px solid var(--secondary-color);
+}
+/*---------------------------- span ----------------------------*/
 .span {
   font-weight: bold;
+  color: var(--third-color);
+  transition: color 1s ease;
+}
+.card:hover .span {
   color: var(--secondary-color);
 }
-#wallpaper1 {
-  border-radius: 30px;
-  height: 600px;
-  width: 300px;
-  position: fixed;
-  top: 40%;
-  z-index: 0;
-}
-#wallpaper2 {
-  border-radius: 30px;
-  height: 900px;
-  width: 300px;
-  position: fixed;
-  top: 15%;
-  right: 0;
-  z-index: 0;
-}
-.icon {
-  filter: invert(1);
-  height: 70px;
-  width: 70px;
-}
-
+/*---------------------------- guess html ----------------------------*/
 .input-text {
   z-index: 2;
   height: 75px;
@@ -223,7 +295,6 @@ nav div a:hover {
   filter: brightness(0) invert(1) sepia(1) saturate(9) hue-rotate(320deg); /* közel #ffb3b3 */
   transition: filter 0.8s ease;
 }
-
 .question-mark:hover {
   filter: brightness(0) invert(1) sepia(1) saturate(9) hue-rotate(160deg); /* közel #a8dadc */
 }
@@ -247,7 +318,25 @@ nav div a:hover {
   color: var(--primary-color);
   z-index: 10;
 }
-/* 5. Utilities */
+/*----------------------------------------------------- 5. Utilities -----------------------------------------------------*/
+/*---------------------------- flex ----------------------------*/
+.flex-clm {
+  flex-direction: column;
+}
+.flex-row {
+  flex-direction: row;
+}
+/*---------------------------- justify self ----------------------------*/
+.j-s-c {
+  justify-self: center;
+}
+.j-s-l {
+  justify-self: left;
+}
+.j-s-r {
+  justify-self: right;
+}
+/*---------------------------- text align ----------------------------*/
 .txt-aln-l {
   width: 100%;
   text-align: left;
@@ -264,9 +353,11 @@ nav div a:hover {
   width: 100%;
   text-align: justify;
 }
+/*---------------------------- font size ----------------------------*/
 .fnt-s-2 {
   font-size: 2rem;
 }
+/*---------------------------- margins ----------------------------*/
 .mrg-t-1 {
   margin-top: 1rem;
 }
@@ -303,7 +394,8 @@ nav div a:hover {
 .mrg-r-3 {
   margin-right: 3rem;
 }
-/* 6. Media queries */
+/*----------------------------------------------------- 6. Media queries -----------------------------------------------------*/
+/*---------------------------- laptop/ ----------------------------*/
 @media (min-width: 768px) and (max-width: 1023px) {
   #wallpaper1 {
     top: 54%;
@@ -332,6 +424,7 @@ nav div a:hover {
     height: 150px;
   }
 }
+/*---------------------------- tablet ----------------------------*/
 @media (min-width: 576px) and (max-width: 767px) {
   :root {
     --base-font-size: 12px;
@@ -391,6 +484,7 @@ nav div a:hover {
     width: 50px;
   }
 }
+/*---------------------------- mobile ----------------------------*/
 @media (min-width: 320px) and (max-width: 575px) {
   :root {
     --base-font-size: 10px;
