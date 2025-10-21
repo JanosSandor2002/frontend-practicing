@@ -3,7 +3,7 @@ $(document).ready(function () {
 
   $.getJSON('../data/data.json')
     .done(function (data) {
-      predictions = data.predictions;
+      predictions = data[0].predictions;
       console.log('Predictions loaded:');
 
       $('#button-predict').click(function () {
