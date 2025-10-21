@@ -11,12 +11,13 @@ if (theme === 'light') {
   );
   $('#wallpaper1,#wallpaper2').css('display', 'block');
 }
-$('#hero-image-1, #hero-image-2').click(() => {
+$('#hero-image-1').click(() => {
   console.log('Theme toggle started');
   if (theme === 'dark') {
     theme = 'light';
     $(':root').addClass('light-theme');
     $('.icon').css('filter', 'invert(0)');
+    $('.hero2').css('filter', 'invert(0)');
     $('#wallpaper1,#wallpaper2').css('display', 'none');
   } else {
     theme = 'dark';
@@ -25,6 +26,7 @@ $('#hero-image-1, #hero-image-2').click(() => {
       'filter',
       'brightness(0) invert(1) sepia(1) saturate(3) hue-rotate(140deg)'
     );
+    $('.hero2').css('filter', 'invert(1)');
     $('#wallpaper1,#wallpaper2').css('display', 'block');
   }
 

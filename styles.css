@@ -116,13 +116,23 @@ nav div a {
 nav div a:hover {
   color: var(--secondary-color);
 }
-.hero,
-.hero2 {
+.hero {
   height: 150px;
   width: 200px;
   border-radius: 50%;
   border: var(--background-color) 2px solid;
   transition: border-color 1s ease;
+}
+.hero2 {
+  filter: invert(1);
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  border: var(--background-color) 2px solid;
+  transition: border-color 1s ease;
+}
+.user {
+  display: none;
 }
 .hero:hover,
 .hero2:hover {
@@ -168,6 +178,10 @@ nav div a:hover {
   transition: color 1s ease;
 }
 .card:hover h1 {
+  color: var(--secondary-color);
+}
+.span {
+  font-weight: bold;
   color: var(--secondary-color);
 }
 #wallpaper1 {
