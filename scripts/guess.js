@@ -9,7 +9,7 @@ $(document).ready(function () {
       .toLowerCase()
       .split('');
     guessed = Array(word.length).fill(false);
-    console.log('Kiválasztott szó:', word.join('')); // ellenőrzéshez
+    console.log('Kiválasztott szó:', word.join(''));
   }).fail(function () {
     console.error('Nem sikerült betölteni a data.json fájlt!');
   });
