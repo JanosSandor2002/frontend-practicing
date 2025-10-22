@@ -6,7 +6,7 @@ $(document).ready(function () {
     $('.error').text('');
     $('input, textarea').removeClass('input-error input-valid');
 
-    const name = $('#name').val().trim();
+    const name = $('#feedback-name').val().trim();
     const message = $('#message').val().trim();
     const topic = $('#topic').val().trim();
     const satisfaction = $('input[name="satisfaction"]:checked').val();
@@ -21,10 +21,10 @@ $(document).ready(function () {
 
     if (name === '') {
       $('#error-name').text('Name is required.');
-      $('#name').addClass('input-error');
+      $('#feedback-name').addClass('input-error');
       valid = false;
     } else {
-      $('#name').addClass('input-valid');
+      $('#feedback-name').addClass('input-valid');
     }
 
     if (message.length < 10) {
