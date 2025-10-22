@@ -333,9 +333,8 @@ table td {
   position: fixed;
   border: #a8dadc solid 3px;
   top: 30%;
-  right: 3%;
-  height: 600px;
-  width: 600px;
+  height: 300px;
+  width: 200px;
   color: var(--primary-color);
   z-index: 10;
 }
