@@ -1,14 +1,4 @@
-# 1. expo cli
-
-# Quickstart - Expo + React Native + TypeScript
-
-# 1. prerequisites
-
-# Node.js, Git telepítve, opcionálisan Android Studio / Xcode
-
-npm install -g eas-cli # EAS CLI a buildhez
-
-# 2. create
+# 1. create
 
 npx create-expo-app my-expo-app
 
