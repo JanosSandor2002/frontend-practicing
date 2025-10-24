@@ -10,9 +10,17 @@ npm install
 
 npm create-react-app@latest my-app
 
+npm start
+
+npm run build
+
 ## vite
 
-npm create vite@latest
+npm create vite@latest my-app
+
+npm run dev
+
+npm run build
 
 # Mappa megnyitása
 
