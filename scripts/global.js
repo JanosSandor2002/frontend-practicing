@@ -5,7 +5,6 @@ if (theme === 'light') {
   $('.icon').css('filter', 'invert(0)');
   $('.hero2').css('filter', 'invert(0)');
   $('.hero2').css('border-color', 'white');
-  $('#wallpaper1,#wallpaper2').css('display', 'none');
 } else {
   $(':root').removeClass('light-theme');
   $('.icon').css(
@@ -14,7 +13,6 @@ if (theme === 'light') {
   );
   $('.hero2').css('filter', 'invert(1)');
   $('.hero2').css('border-color', 'black');
-  $('#wallpaper1,#wallpaper2').css('display', 'block');
 }
 
 $('#hero-image-1').click(() => {
@@ -24,7 +22,6 @@ $('#hero-image-1').click(() => {
     $(':root').addClass('light-theme');
     $('.icon').css('filter', 'invert(0)');
     $('.hero2').css('filter', 'invert(0)');
-    $('#wallpaper1,#wallpaper2').css('display', 'none');
   } else {
     theme = 'dark';
     $(':root').removeClass('light-theme');
@@ -33,7 +30,6 @@ $('#hero-image-1').click(() => {
       'brightness(0) invert(1) sepia(1) saturate(3) hue-rotate(140deg)'
     );
     $('.hero2').css('filter', 'invert(1)');
-    $('#wallpaper1,#wallpaper2').css('display', 'block');
   }
   console.log('Theme changed to: ' + theme);
   localStorage.setItem('theme', theme);
