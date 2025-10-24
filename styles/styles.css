@@ -223,22 +223,10 @@ table td {
   height: 100px;
   width: 100px;
 }
-#wallpaper1 {
-  border-radius: 30px;
-  height: 600px;
-  width: 300px;
+#winter-pic {
   position: fixed;
-  top: 40%;
-  z-index: 0;
-}
-#wallpaper2 {
-  border-radius: 30px;
-  height: 900px;
-  width: 300px;
-  position: fixed;
-  top: 15%;
-  right: 0;
-  z-index: 0;
+  height: 100%;
+  width: 100%;
 }
 #gallery-pic {
   border-radius: var(--border-radius);
@@ -487,15 +475,6 @@ table td {
     font-size: 40px;
   }
   /*-------------- pictures --------------*/
-  #wallpaper1 {
-    top: 54%;
-    width: 150px;
-    height: 400px;
-  }
-  #wallpaper2 {
-    width: 200px;
-    height: 700px;
-  }
   .hero {
     height: 140px;
     width: 140px;
@@ -566,15 +545,6 @@ table td {
     font-size: 30px;
   }
   /*-------------- pictures --------------*/
-  #wallpaper1 {
-    top: 40%;
-    width: 120px;
-    height: 300px;
-  }
-  #wallpaper2 {
-    width: 120px;
-    height: 500px;
-  }
   .hero {
     height: 140px;
     width: 140px;
@@ -653,6 +623,9 @@ table td {
     text-align: center;
     margin: 0 0;
   }
+  section {
+    margin: 20px;
+  }
   footer div a {
     margin: 5px 10px;
   }
@@ -677,15 +650,6 @@ table td {
     font-size: 24px;
   }
   /*-------------- pictures --------------*/
-  #wallpaper1 {
-    top: 40%;
-    width: 120px;
-    height: 300px;
-  }
-  #wallpaper2 {
-    width: 120px;
-    height: 500px;
-  }
   .hero {
     height: 70px;
     width: 70px;
