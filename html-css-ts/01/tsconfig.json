@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "es6", // Böngészőben jól támogatott JS verzió
+    "module": "esnext", // ES modulok, <script type="module">-hoz
+    "strict": true, // Szigorú típusellenőrzés
+    "sourceMap": true, // DevTools-ban látszik a TS fájl
+    "outDir": "./dist", // Fordított JS fájlok ide kerülnek
+    "rootDir": "./src", // TS források itt vannak
+    "skipLibCheck": true // Gyorsabb fordítás, külső definíciókat kihagy
+  },
+  "include": ["src/**/*"]
+}
