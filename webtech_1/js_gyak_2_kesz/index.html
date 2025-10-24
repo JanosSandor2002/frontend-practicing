@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feladat</title>
+    <style>
+      body {
+        height: 1000px;
+        width: 150px;
+        margin-left: 200px;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+      }
+      .element {
+        text-align: center;
+        width: 100%;
+        height: 250px;
+        border: 2px solid black;
+      }
+      .rand {
+        height: 60px;
+      }
+      .carr {
+        height: 440px;
+      }
+      .datt {
+        height: 60px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="people" class="element">
+        <button onclick="start('people')">People</button>
+        <div id="peoplestats"></div>
+      </div>
+      <div id="random" class="element rand">
+        <button onclick="start('random')">Random</button>
+        <p id="randomnumber"></p>
+      </div>
+      <div id="cars" class="element carr">
+        <button onclick="start('cars')">Cars</button>
+        <ul id="carsstats"></ul>
+      </div>
+      <div id="date" class="element datt">
+        <button onclick="start('date')">Date</button>
+        <p id="datenumber"></p>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

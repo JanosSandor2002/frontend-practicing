@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diák adatlap</title>
+    <style>
+      form {
+        max-width: 500px;
+        margin: 20px auto;
+        font-family: Arial, sans-serif;
+      }
+      label {
+        display: block;
+        margin-top: 15px;
+        font-weight: bold;
+      }
+      input,
+      select {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        box-sizing: border-box;
+      }
+      .error-message {
+        color: red;
+        font-size: 14px;
+        margin-top: 3px;
+      }
+      .error-border {
+        border: 2px solid red;
+      }
+      input[type='checkbox'] {
+        width: auto;
+        margin-right: 5px;
+      }
+      button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="diakForm">
+      <label for="nev">Név</label>
+      <input type="text" id="nev" name="nev" required />
+      <div class="error-message" id="nevError"></div>
+
+      <label for="lakcim">Lakcím</label>
+      <input type="text" id="lakcim" name="lakcim" required />
+      <div class="error-message" id="lakcimError"></div>
+
+      <label for="kor">Kor</label>
+      <input type="number" id="kor" name="kor" required min="18" max="100" />
+      <div class="error-message" id="korError"></div>
+
+      <label for="anyjaNeve">Anyja neve</label>
+      <input type="text" id="anyjaNeve" name="anyjaNeve" required />
+      <div class="error-message" id="anyjaNeveError"></div>
+
+      <label for="egyetem">Egyetem neve</label>
+      <input type="text" id="egyetem" name="egyetem" required />
+      <div class="error-message" id="egyetemError"></div>
+
+      <label for="kar">Kar neve</label>
+      <input type="text" id="kar" name="kar" required />
+      <div class="error-message" id="karError"></div>
+
+      <label for="szak">Szak neve</label>
+      <input type="text" id="szak" name="szak" required />
+      <div class="error-message" id="szakError"></div>
+
+      <label for="diakIgSzam">Diákigazolvány szám</label>
+      <input
+        type="text"
+        id="diakIgSzam"
+        name="diakIgSzam"
+        required
+        maxlength="11"
+        minlength="11"
+        pattern="\d{11}"
+      />
+      <div class="error-message" id="diakIgSzamError"></div>
+
+      <label>
+        <input type="checkbox" id="adatkezeles" required />
+        Elfogadom az adatkezelési szabályzatot
+      </label>
+      <div class="error-message" id="adatkezelesError"></div>
+
+      <button type="submit">Küldés</button>
+    </form>
+
+    <script src="script.js"></script>
+  </body>
+</html>
