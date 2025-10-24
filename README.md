@@ -2,6 +2,10 @@
 
 This repository is part of my path into the world of frontend web development. My goal is to gradually build up my skills and learn how to create modern web applications, starting from the basics and moving toward more advanced frameworks and tools.
 
+## Guide
+
+You must change between repository branches to find my little projects.
+
 ## What I’ve Learned So Far
 
 ### HTML
