@@ -1,57 +1,23 @@
-# My Frontend Learning Journey
+# 1️⃣ Node kezelés
 
-This repository is part of my path into the world of frontend web development. My goal is to gradually build up my skills and learn how to create modern web applications, starting from the basics and moving toward more advanced frameworks and tools.
+node -v
 
-## Guide
+npm install
 
-You must change between repository branches to find my little projects.
+# 2. Struktúra létrehozása
 
-## What I’ve Learned So Far
+## create-react-app
 
-### HTML
+npm create-react-app@latest my-app
 
-- Beginner and advanced HTML
-- Page structures and layouts
-- Forms, links, and tables
-- Semantic HTML and accessibility
+## vite
 
-### CSS
+npm create vite@latest
 
-- Beginner and advanced CSS
-- Colors, typography, layouts
-- Flexbox and Grid
-- Animations and responsive design
+# Mappa megnyitása
 
-### JavaScript
+mkdir my-ts-project
 
-- Beginner and advanced JavaScript
-- Variables, functions, loops
-- DOM manipulation and events
-- Object-oriented and functional approaches
+cd my-ts-project
 
-### React
-
-- Beginner-level React
-- Components, props, and state
-- Building simple projects
-
-## What I Want to Learn Next
-
-### Expanding HTML, CSS, and JavaScript
-
-- jQuery
-- Bootstrap
-
-### React and Modern Frontend Development
-
-- Advanced React (hooks, context, optimization)
-- Tailwind CSS
-- Next.js (SSR and SSG features)
-- React Router for navigation
-- State management libraries (Redux, Zustand, etc.)
-- TypeScript with React
-- Working with APIs and asynchronous data
-- Testing (Jest, React Testing Library)
-- Deployment and build processes
-
-This repository is not only a place for practice but also a kind of learning diary, showing how I grow as a frontend developer over time. My aim is to eventually be able to create structured, fast, and responsive web applications with confidence.
+# (Ezután szerkeszd a tsconfig.json-t, és add hozzá a HTML/CSS/TS fájlokat)
