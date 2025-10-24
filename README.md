@@ -1,5 +1,9 @@
 # 1️⃣ Új projekt mappa létrehozása
 
+node -v
+
+npm install
+
 mkdir my-ts-project
 
 cd my-ts-project
