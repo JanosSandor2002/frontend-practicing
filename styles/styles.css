@@ -180,6 +180,7 @@ form {
 /*---------------------------- table ----------------------------*/
 table {
   border: #ffffff 5px solid;
+  border-radius: var(--border-radius);
   height: 250px;
   width: 90%;
   text-align: center;
@@ -189,6 +190,18 @@ table td {
   font-size: 48px;
   font-weight: bold;
   text-transform: capitalize;
+}
+table tr:nth-child(1) td:nth-child(1) {
+  border-top-left-radius: var(--border-radius);
+}
+table tr:nth-child(1) td:nth-child(6) {
+  border-top-right-radius: var(--border-radius);
+}
+table tr:nth-child(3) td:nth-child(1) {
+  border-bottom-left-radius: var(--border-radius);
+}
+table tr:nth-child(3) td:nth-child(6) {
+  border-bottom-right-radius: var(--border-radius);
 }
 /*----------------------------------------------------- 4. Components -----------------------------------------------------*/
 /*---------------------------- picture ----------------------------*/
@@ -546,8 +559,8 @@ table td {
   }
   /*-------------- pictures --------------*/
   .hero {
-    height: 140px;
-    width: 140px;
+    height: 100px;
+    width: 100px;
   }
   .hero2 {
     height: 80px;
@@ -678,6 +691,7 @@ table td {
   }
   .button {
     width: 200px;
+    margin: 15px;
   }
   /*-------------- guess --------------*/
   .input-text {
@@ -694,7 +708,16 @@ table td {
   #gallery-pic {
     height: 200px;
   }
-  /*-------------- gallery --------------*/
+  #gallery-form {
+    flex-direction: row;
+    gap: 0;
+  }
+  #gallery-left,
+  #gallery-right {
+    width: 150px;
+    height: 75px;
+  }
+  /*-------------- feedback --------------*/
   #feedback-name {
     font-size: 16px;
     width: 200px;

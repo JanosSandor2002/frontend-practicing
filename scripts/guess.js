@@ -9,18 +9,16 @@ $(document).ready(function () {
       .toLowerCase()
       .split('');
     guessed = Array(word.length).fill(false);
-    console.log('Kiválasztott szó:', word.join(''));
+    console.log('Chosen word:', word.join(''));
   }).fail(function () {
-    console.error('Nem sikerült betölteni a data.json fájlt!');
+    console.error('data.json could not be loaded');
   });
 
   $('#button-guess').click(function (e) {
     e.preventDefault();
 
     if (!word.length) {
-      $('#game-status').text(
-        'A játék még nem töltődött be, kérlek várj egy pillanatot!'
-      );
+      $('#game-status').text('game has not loaded yet, please wait');
       return;
     }
 
@@ -44,24 +42,22 @@ $(document).ready(function () {
 
     if (correct) {
       $('#game-status').text(
-        `Sikerült! "${guess}" benne van a szóban. Életpont: ${lives}`
+        `Success! "${guess}" is in the word. Lifes left: ${lives}`
       );
 
       // Ha minden betű megvan
       if (guessed.every((v) => v === true)) {
         $('#game-status').text(
-          `🎉 Gratulálok, kitaláltad a szót: "${word.join('')}"!`
+          `🎉 Congratulations! You figured out the word: "${word.join('')}"!`
         );
         $('#button-guess').prop('disabled', true);
       }
     } else {
       lives--;
       if (lives > 0) {
-        $('#game-status').text(`Sajnos nincs a szóban. Életpont: ${lives}`);
+        $('#game-status').text(`Wrong Guess, Lifes left: ${lives}`);
       } else {
-        $('#game-status').text(
-          `💀 Vesztettél! A szó a "${word.join('')}" volt.`
-        );
+        $('#game-status').text(`💀 You Lost! The word was "${word.join('')}".`);
         $('#button-guess').prop('disabled', true);
       }
     }
