@@ -4,7 +4,7 @@ This repository is part of my path into the world of frontend web development. M
 
 ## Guide
 
-You must change between repository branches to find my little projects.
+You must change between repository branches to find my little projects as parts.
 
 ## What I’ve Learned So Far
 
