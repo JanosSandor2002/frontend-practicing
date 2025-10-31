@@ -4,7 +4,7 @@ import Starter3 from './tutorial/03-conditional-rendering/starter/07-user-challe
 import Final from './tutorial/01-useState/final/04-useState-object';
 import Navbar from './tutorial/04-project-structure/starter/Navbar'; // 5
 import List from './tutorial/05-leverage-javascript/starter/List';
-import Starter6 from './tutorial/06-forms/starter/02-user-challenge';
+import Starter6 from './tutorial/06-forms/starter/05-form-data';
 
 function App() {
   return <Starter6 />;

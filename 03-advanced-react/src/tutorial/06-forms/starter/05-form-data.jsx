@@ -5,6 +5,7 @@ const UncontrolledInputs = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(e.currentTarget);
   };
   return (
     <div>
@@ -24,7 +25,7 @@ const UncontrolledInputs = () => {
           </label>
           <input type='email' className='form-input' id='email' name='email' />
         </div>
-        {/* email */}
+        {/* password */}
         <div className='form-row'>
           <label htmlFor='password' className='form-label'>
             Password
